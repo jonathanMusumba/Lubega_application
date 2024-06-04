@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application form_Biodata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        
+        label {
+            font-weight: bold;
+            text-align: right;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="email"],
+        select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ee0707;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        
+        h1 {
+            box-shadow: #4CAF50;
+            border-style: solid;
+            background-color: #45a049;
+            color: #f4f4f4;
+            position: relative;
+            text-align: center;
+            stroke: chocolate;
+        }
+        
+        h2 {
+            margin: 10px 0;
+            border-style: groove;
+            background-color: chocolate;
+            color: #fff;
+        }
+        
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+            }
+            .form-group {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <form class="form-grid" action="biodata.php" method="post">
+            <h1>APPLICATION FORM</h1>
+            <h2>Section A: Course Information & Bio-data</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="entryType">Entry Type:</label>
+                    <label><input type="radio" name="entryType" value="direct" required> Direct Entry</label>
+                    <label><input type="radio" name="entryType" value="indirect" required> Indirect Entry</label>
+                </div>
+                <div class="form-group">
+                    <label for="level">Level:</label>
+                    <label><input type="radio" name="level" value="certificate" required> Certificate</label>
+                    <label><input type="radio" name="level" value="diploma" required> Diploma</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="course">Course:</label>
+                    <select name="course" id="course" required>
+                        <option value="">Select Course</option>
+                        <optgroup label="Certificate Courses" id="certificateCourses">
+                            <option value="Certificate in Medical Laboratory Techniques">Certificate in Medical Laboratory Techniques</option>
+                            <option value="Certificate in Pharmacy">Certificate in Pharmacy</option>
+                            <option value="Certificate in Nursing">Certificate in Nursing</option>
+                            <option value="Certificate in Midwifery">Certificate in Midwifery</option>
+                            <option value="Certificate In Baking">Certificate In Baking</option>
+                            <option value="Certificate In Cookery">Certificate In Cookery</option>
+                            <option value="Certificate In Juice Processing">Certificate In Juice Processing</option>
+                            <option value="Certificate in Records and Information Management">Certificate in Records and Information Management</option>
+                            <option value="National Certificate in Finance and Accounting">National Certificate in Finance and Accounting</option>
+                            <option value="National Certificate in Public Administration and Management">National Certificate in Public Administration and Management</option>
+                            <option value="National Certificate in Hotel and Institutional Catering">National Certificate in Hotel and Institutional Catering</option>
+                        </optgroup>
+                        <optgroup label="Diploma Courses" id="diplomaCourses">
+                            <option value="Diploma In Clinical Medicine and Community Health">Diploma In Clinical Medicine and Community Health</option>
+                            <option value="Diploma in Nursing (Extension)">Diploma in Nursing (Extension)</option>
+                            <option value="Diploma in Midwifery (Extension)">Diploma in Midwifery (Extension)</option>
+                            <option value="Diploma in Pharmacy">Diploma in Pharmacy</option>
+                            <option value="Diploma in Medical Laboratory Techniques">Diploma in Medical Laboratory Techniques</option>
+                            <option value="Diploma in Hotel and Institutional Catering">Diploma in Hotel and Institutional Catering</option>
+                            <option value="Diploma in Records and Information Management">Diploma in Records and Information Management</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="academicSession">Academic Session:</label>
+                    <select name="academicSession" id="academicSession" required>
+                        <option value="">Select Academic Session</option>
+                        <option value="2024/2025">2024/2025</option>
+                        <option value="2025/2026">2025/2026</option>
+                        <option value="2025/2026">2025/2026</option>
+                        <option value="2026/2027">2026/2027</option>
+                        <option value="2027/2028">2027/2028</option>
+                        <option value="2029/2030">2029/2030</option>
+                        <option value="2030/2031">2030/2031</option>
+                        <option value="2031/2032">2031/2032</option>
+                        <option value="2032/2033">2032/2033</option>
+                    </select>
+                </div>
+            </div>
+            <hr class="thick-line">
+            <h2>Section B: Biodata</h2>
+            <div class="bio-data-container">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="surname">Surname:</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="givenName">Given Name:</label>
+                        <input type="text" id="givenName" name="givenName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="otherNames">Other Names:</label>
+                        <input type="text" id="otherNames" name="otherNames">
+                    </div>
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" onchange="calculateAge()" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="text" id="age" name="age" style="width: 50px;" value="" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="sex">Sex:</label>
+                        <label><input type="radio" id="male" name="sex" value="male"> Male</label>
+                        <label><input type="radio" id="male" name="sex" value="female" > Female</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="maritalStatus">Marital Status:</label>
+                        <select id="maritalStatus" name="maritalStatus" required>
+                            <option value="">Select Marital Status</option>
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="divorced">Divorced</option>
+                            <option value="widowed">Widowed</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="religion">Religion:</label>
+                        <select id="religion" name="religion">
+                            <option value="">Select Religion</option>
+                            <option value="moslem">Moslem</option>
+                            <option value="anglican">Anglican</option>
+                            <option value="bornAgain">Born-Again</option>
+                            <option value="catholic">Catholic</option>
+                            <option value="seventhAdventist">Seventh Adventist</option>
+                            <option value="traditionist">Traditionist</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+            <h2>Section C: Contact Details</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="telephone">Telephone:</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="Enter telephone number" required>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" value="Uganda" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="district">District:</label>
+                        <select id="district" name="district" required>
+                        <option value="" disabled selected>Select District</option>
+                        <option value="Abim">Abim</option>
+                <option value="Adjumani">Adjumani</option>
+                <option value="Agago">Agago</option>
+                <option value="Alebtong">Alebtong</option>
+                <option value="Amolatar">Amolatar</option>
+                <option value="Amudat">Amudat</option>
+                <option value="Amuria">Amuria</option>
+                <option value="Amuru">Amuru</option>
+                <option value="Apac">Apac</option>
+                <option value="Arua">Arua</option>
+                <option value="Budaka">Budaka</option>
+                <option value="Bududa">Bududa</option>
+                <option value="Bugiri">Bugiri</option>
+                <option value="Bugweri">Bugweri</option>
+                <option value="Bukedea">Bukedea</option>
+                <option value="Bukwo">Bukwo</option>
+                <option value="Bulambuli">Bulambuli</option>
+                <option value="Bundibugyo">Bundibugyo</option>
+                <option value="Bunyangabu">Bunyangabu</option>
+                <option value="Bushenyi">Bushenyi</option>
+                <option value="Busia">Busia</option>
+                <option value="Butaleja">Butaleja</option>
+                <option value="Butebo">Butebo</option>
+                <option value="Buikwe">Buikwe</option>
+                <option value="Bukomansimbi">Bukomansimbi</option>
+                <option value="Butambala">Butambala</option>
+                <option value="Buvuma">Buvuma</option>
+                <option value="Gomba">Gomba</option>
+                <option value="Hoima">Hoima</option>
+                <option value="Ibanda">Ibanda</option>
+                <option value="Iganga">Iganga</option>
+                <option value="Isingiro">Isingiro</option>
+                <option value="Jinja">Jinja</option>
+                <option value="Kaabong">Kaabong</option>
+                <option value="Kabale">Kabale</option>
+                <option value="Kabarole">Kabarole</option>
+                <option value="Kagadi">Kagadi</option>
+                <option value="Kakumiro">Kakumiro</option>
+                <option value="Kalaki">Kalaki</option>
+                <option value="Kalangala">Kalangala</option>
+                <option value="Kalungu">Kalungu</option>
+                <option value="Kampala">Kampala</option>
+                <option value="Kamuli">Kamuli</option>
+                <option value="Kamwenge">Kamwenge</option>
+                <option value="Kanungu">Kanungu</option>
+                <option value="Kapchorwa">Kapchorwa</option>
+                <option value="Kapelebyong">Kapelebyong</option>
+                <option value="Kasese">Kasese</option>
+                <option value="Kasanda">Kasanda</option>
+                <option value="Katakwi">Katakwi</option>
+                <option value="Kayunga">Kayunga</option>
+                <option value="Kiboga">Kiboga</option>
+                <option value="Kibuku">Kibuku</option>
+                <option value="Kiruhura">Kiruhura</option>
+                <option value="Kisoro">Kisoro</option>
+                <option value="Kitagwenda">Kitagwenda</option>
+                <option value="Kitgum">Kitgum</option>
+                <option value="Koboko">Koboko</option>
+                <option value="Kole">Kole</option>
+                <option value="Kotido">Kotido</option>
+                <option value="Kumi">Kumi</option>
+                <option value="Kween">Kween</option>
+                <option value="Kyankwanzi">Kyankwanzi</option>
+                <option value="Kyotera">Kyotera</option>
+                <option value="Lamwo">Lamwo</option>
+                <option value="Lira">Lira</option>
+                <option value="Luuka">Luuka</option>
+                <option value="Luweero">Luweero</option>
+                <option value="Lwengo">Lwengo</option>
+                <option value="Lyantonde">Lyantonde</option>
+                <option value="Manafwa">Manafwa</option>
+                <option value="Maracha">Maracha</option>
+                <option value="Masaka">Masaka</option>
+                <option value="Masindi">Masindi</option>
+                <option value="Mayuge">Mayuge</option>
+                <option value="Mbale">Mbale</option>
+                <option value="Mbarara">Mbarara</option>
+                <option value="Mitooma">Mitooma</option>
+                <option value="Moroto">Moroto</option>
+                <option value="Moyo">Moyo</option>
+                <option value="Mpigi">Mpigi</option>
+                <option value="Mubende">Mubende</option>
+                <option value="Mukono">Mukono</option>
+                <option value="Nabilatuk">Nabilatuk</option>
+                <option value="Nakapiripirit">Nakapiripirit</option>
+                <option value="Nakaseke">Nakaseke</option>
+                <option value="Nakasongola">Nakasongola</option>
+                <option value="Namayingo">Namayingo</option>
+                <option value="Namisindwa">Namisindwa</option>
+                <option value="Namutumba">Namutumba</option>
+                <option value="Napak">Napak</option>
+                <option value="Nebbi">Nebbi</option>
+                <option value="Ngora">Ngora</option>
+                <option value="Ntoroko">Ntoroko</option>
+                <option value="Ntungamo">Ntungamo</option>
+                <option value="Nwoya">Nwoya</option>
+                <option value="Omoro">Omoro</option>
+                <option value="Otuke">Otuke</option>
+                <option value="Oyam">Oyam</option>
+                <option value="Pader">Pader</option>
+                <option value="Pakwach">Pakwach</option>
+                <option value="Pallisa">Pallisa</option>
+                <option value="Rakai">Rakai</option>
+                <option value="Rubanda">Rubanda</option>
+                <option value="Rubirizi">Rubirizi</option>
+                <option value="Rukiga">Rukiga</option>
+                <option value="Rukungiri">Rukungiri</option>
+                <option value="Rwampara">Rwampara</option>
+                <option value="Serere">Serere</option>
+                <option value="Sembabule">Sembabule</option>
+                <option value="Sheema">Sheema</option>
+                <option value="Sironko">Sironko</option>
+                <option value="Soroti">Soroti</option>
+                <option value="Terego">Terego</option>
+                <option value="Tororo">Tororo</option>
+                <option value="Wakiso">Wakiso</option>
+                <option value="Yumbe">Yumbe</option>
+                <option value="Zombo">Zombo</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="county">County:</label>
+                    <input type="text" id="county" name="county" placeholder="Enter county" required>
+                </div>
+                <div class="form-group">
+                    <label for="subCounty">Sub County:</label>
+                    <input type="text" id="subCounty" name="subCounty" placeholder="Enter sub county" required>
+                </div>
+            </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="parish">Parish:</label>
+                    <input type="text" id="parish" name="parish" placeholder="Enter parish" required>
+                </div>
+                <div class="form-group">
+                    <label for="village">Village/Cell:</label>
+                    <input type="text" id="village" name="village" placeholder="Enter village/cell" required>
+                </div>
+            </div>
+            </div>
+            <h2>Section D: Additional Details (Next of Kin)</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="kinName">Name:</label>
+                    <input type="text" id="kinName" name="kinName" required>
+                </div>
+                <div class="form-group">
+                    <label for="kinOccupation">Occupation:</label>
+                    <input type="text" id="kinOccupation" name="kinOccupation" required>
+                </div>
+
+            </div>
+
+
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="kinTelephone">Telephone:</label>
+                    <input type="text" id="kinTelephone" name="kinTelephone" required>
+                </div>
+                <div class="form-group">
+                    <label for="kinEmail">Email:</label>
+                    <input type="text" id="kinEmail" name="kinEmail" required>
+                </div>
+            </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="kinDistrict">District:</label>
+                    <select id="kinDistrict" name="kinDistrict" required>
+                        <option value="" disabled selected>Select District</option>
+                        <option value="Abim">Abim</option>
+                <option value="Adjumani">Adjumani</option>
+                <option value="Agago">Agago</option>
+                <option value="Alebtong">Alebtong</option>
+                <option value="Amolatar">Amolatar</option>
+                <option value="Amudat">Amudat</option>
+                <option value="Amuria">Amuria</option>
+                <option value="Amuru">Amuru</option>
+                <option value="Apac">Apac</option>
+                <option value="Arua">Arua</option>
+                <option value="Budaka">Budaka</option>
+                <option value="Bududa">Bududa</option>
+                <option value="Bugiri">Bugiri</option>
+                <option value="Bugweri">Bugweri</option>
+                <option value="Bukedea">Bukedea</option>
+                <option value="Bukwo">Bukwo</option>
+                <option value="Bulambuli">Bulambuli</option>
+                <option value="Bundibugyo">Bundibugyo</option>
+                <option value="Bunyangabu">Bunyangabu</option>
+                <option value="Bushenyi">Bushenyi</option>
+                <option value="Busia">Busia</option>
+                <option value="Butaleja">Butaleja</option>
+                <option value="Butebo">Butebo</option>
+                <option value="Buikwe">Buikwe</option>
+                <option value="Bukomansimbi">Bukomansimbi</option>
+                <option value="Butambala">Butambala</option>
+                <option value="Buvuma">Buvuma</option>
+                <option value="Gomba">Gomba</option>
+                <option value="Hoima">Hoima</option>
+                <option value="Ibanda">Ibanda</option>
+                <option value="Iganga">Iganga</option>
+                <option value="Isingiro">Isingiro</option>
+                <option value="Jinja">Jinja</option>
+                <option value="Kaabong">Kaabong</option>
+                <option value="Kabale">Kabale</option>
+                <option value="Kabarole">Kabarole</option>
+                <option value="Kagadi">Kagadi</option>
+                <option value="Kakumiro">Kakumiro</option>
+                <option value="Kalaki">Kalaki</option>
+                <option value="Kalangala">Kalangala</option>
+                <option value="Kalungu">Kalungu</option>
+                <option value="Kampala">Kampala</option>
+                <option value="Kamuli">Kamuli</option>
+                <option value="Kamwenge">Kamwenge</option>
+                <option value="Kanungu">Kanungu</option>
+                <option value="Kapchorwa">Kapchorwa</option>
+                <option value="Kapelebyong">Kapelebyong</option>
+                <option value="Kasese">Kasese</option>
+                <option value="Kasanda">Kasanda</option>
+                <option value="Katakwi">Katakwi</option>
+                <option value="Kayunga">Kayunga</option>
+                <option value="Kiboga">Kiboga</option>
+                <option value="Kibuku">Kibuku</option>
+                <option value="Kiruhura">Kiruhura</option>
+                <option value="Kisoro">Kisoro</option>
+                <option value="Kitagwenda">Kitagwenda</option>
+                <option value="Kitgum">Kitgum</option>
+                <option value="Koboko">Koboko</option>
+                <option value="Kole">Kole</option>
+                <option value="Kotido">Kotido</option>
+                <option value="Kumi">Kumi</option>
+                <option value="Kween">Kween</option>
+                <option value="Kyankwanzi">Kyankwanzi</option>
+                <option value="Kyotera">Kyotera</option>
+                <option value="Lamwo">Lamwo</option>
+                <option value="Lira">Lira</option>
+                <option value="Luuka">Luuka</option>
+                <option value="Luweero">Luweero</option>
+                <option value="Lwengo">Lwengo</option>
+                <option value="Lyantonde">Lyantonde</option>
+                <option value="Manafwa">Manafwa</option>
+                <option value="Maracha">Maracha</option>
+                <option value="Masaka">Masaka</option>
+                <option value="Masindi">Masindi</option>
+                <option value="Mayuge">Mayuge</option>
+                <option value="Mbale">Mbale</option>
+                <option value="Mbarara">Mbarara</option>
+                <option value="Mitooma">Mitooma</option>
+                <option value="Moroto">Moroto</option>
+                <option value="Moyo">Moyo</option>
+                <option value="Mpigi">Mpigi</option>
+                <option value="Mubende">Mubende</option>
+                <option value="Mukono">Mukono</option>
+                <option value="Nabilatuk">Nabilatuk</option>
+                <option value="Nakapiripirit">Nakapiripirit</option>
+                <option value="Nakaseke">Nakaseke</option>
+                <option value="Nakasongola">Nakasongola</option>
+                <option value="Namayingo">Namayingo</option>
+                <option value="Namisindwa">Namisindwa</option>
+                <option value="Namutumba">Namutumba</option>
+                <option value="Napak">Napak</option>
+                <option value="Nebbi">Nebbi</option>
+                <option value="Ngora">Ngora</option>
+                <option value="Ntoroko">Ntoroko</option>
+                <option value="Ntungamo">Ntungamo</option>
+                <option value="Nwoya">Nwoya</option>
+                <option value="Omoro">Omoro</option>
+                <option value="Otuke">Otuke</option>
+                <option value="Oyam">Oyam</option>
+                <option value="Pader">Pader</option>
+                <option value="Pakwach">Pakwach</option>
+                <option value="Pallisa">Pallisa</option>
+                <option value="Rakai">Rakai</option>
+                <option value="Rubanda">Rubanda</option>
+                <option value="Rubirizi">Rubirizi</option>
+                <option value="Rukiga">Rukiga</option>
+                <option value="Rukungiri">Rukungiri</option>
+                <option value="Rwampara">Rwampara</option>
+                <option value="Serere">Serere</option>
+                <option value="Sembabule">Sembabule</option>
+                <option value="Sheema">Sheema</option>
+                <option value="Sironko">Sironko</option>
+                <option value="Soroti">Soroti</option>
+                <option value="Terego">Terego</option>
+                <option value="Tororo">Tororo</option>
+                <option value="Wakiso">Wakiso</option>
+                <option value="Yumbe">Yumbe</option>
+                <option value="Zombo">Zombo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="kinParish">Parish:</label>
+                    <input type="text" id="kinParish" name="kinParish" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="kinVillage">Village:</label>
+                    <input type="text" id="kinVillage" name="kinVillage" required>
+                </div>
+                <div class="form-group">
+                    <label for="kinRelationship">Relationship:</label>
+                    <select id="kinRelationship" name="kinRelationship" required>
+                        <option value="">Select Relationship</option>
+                        <option value="Mother">Mother</option>
+                        <option value="Father">Father</option>
+                        <option value="Husband">Husband</option>
+                        <option value="Wife">Wife</option>
+                        <option value="Uncle">Uncle</option>
+                        <option value="Auntie">Auntie</option>
+                        <option value="Sponsor">Sponsor</option>
+                        <option value="Grandparent">Grandparent</option>
+                        <option value="Sister">Sister</option>
+                        <option value="Brother">Brother</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <script>
+        function validateForm() {
+            var indexNumberUCE = document.getElementById("indexNumberUCE").value;
+            var yearUCE = document.getElementById("yearUCE").value;
+            var yearUACE = document.getElementById("yearUACE").value;
+
+            // Validate index number format
+            var indexNumberPattern = /^U\d{4}\/\d{3}$/;
+            if (!indexNumberPattern.test(indexNumberUCE)) {
+                alert("Invalid index number format. Please use format Uxxxx/xxx");
+                return false;
+            }
+
+            // Validate UCE year
+            var currentYear = new Date().getFullYear();
+            if (parseInt(yearUCE) < (currentYear - 1)) {
+                alert("UCE year should be at least 1 year before the current year.");
+                return false;
+            }
+
+            // Validate UACE year
+            if (parseInt(yearUACE) < (currentYear + 3)) {
+                alert("UACE year should be at least 3 years from the current year.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function calculateAge() {
+            var dob = document.getElementById("dob").value;
+
+            var currentDate = new Date();
+
+            var birthDate = new Date(dob);
+
+            var age = currentDate.getFullYear() - birthDate.getFullYear();
+
+            if (currentDate.getMonth() < birthDate.getMonth() ||
+                (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            document.getElementById("age").value = age;
+        }
+    </script>
+</body>
+
+</html>
